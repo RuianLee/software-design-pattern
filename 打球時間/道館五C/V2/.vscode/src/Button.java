@@ -12,6 +12,10 @@ public class Button {
         return value;
     }
 
+    public Command getCommand() {
+        return command;
+    }
+
     public void execute() {
         command.execute();;
     }

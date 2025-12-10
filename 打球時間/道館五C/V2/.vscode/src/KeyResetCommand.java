@@ -9,5 +9,10 @@ public class KeyResetCommand implements Command {
     public void execute() {
         keyBoard.resetAllCommand();
     }
+
+    @Override
+    public void undo() {
+        keyBoard.undoReset();
+    }
 }
 

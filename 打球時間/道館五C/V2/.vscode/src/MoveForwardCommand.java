@@ -10,4 +10,9 @@ public class MoveForwardCommand implements Command {
     public void execute() {
         tank.moveForward();
     }
+
+    @Override
+    public void undo() {
+        tank.moveBackward();
+    }
 }

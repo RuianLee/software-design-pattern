@@ -10,4 +10,9 @@ public class DisconnectCommand implements Command {
     public void execute() {
         telecom.disconnect();
     }
+
+    @Override
+    public void undo() {
+        telecom.connect();
+    }
 }

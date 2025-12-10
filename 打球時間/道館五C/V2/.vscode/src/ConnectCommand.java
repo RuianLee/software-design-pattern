@@ -10,4 +10,9 @@ public class ConnectCommand implements Command {
     public void execute() {
         telecom.connect();
     }
+
+    @Override
+    public void undo() {
+        telecom.disconnect();;
+    }
 }
