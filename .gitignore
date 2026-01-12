@@ -1,1 +1,33 @@
+# 影片檔案
 打球時間/道館四/2025-11-11_15-40-03.mov
+
+# Java 編譯檔案
+*.class
+
+# JSON 設定檔
+*.json
+
+# VS Code 設定檔
+.vscode/
+
+# 編譯輸出目錄
+bin/
+
+# macOS 系統檔案
+.DS_Store
+**/.DS_Store
+
+# IDE 設定檔
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# 其他常見設定檔
+*.log
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
