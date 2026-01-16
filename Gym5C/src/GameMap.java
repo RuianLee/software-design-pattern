@@ -75,8 +75,8 @@ public class GameMap {
      * 更新地圖上的位置（不修改角色座標）
      */
     public void updatePosition(Crood oldCrood, Crood newCrood, MapObject obj) {
-        map[oldCrood.getX()][oldCrood.getY()] = null;  // 清除舊位置
-        map[newCrood.getX()][newCrood.getY()] = obj;   // 放到新位置
+        setMapObjectAt(oldCrood, null);
+        setMapObjectAt(newCrood, obj);
     }
 
     /**
@@ -90,17 +90,16 @@ public class GameMap {
      * 設定指定座標的地圖物件
      */
     public void setMapObjectAt(Crood crood, MapObject mapObject) {
-        if (mapObject != null) {
-            mapObject.setCrood(crood);
-            map[crood.getX()][crood.getY()] = mapObject;
-        } else {
-            map[crood.getX()][crood.getY()] = null;
-        }
+            if(mapObject == null){
+                map[crood.getX()][crood.getY()] = null;
+            } else {
+                mapObject.setCrood(crood);
+                map[crood.getX()][crood.getY()] = mapObject;
+            }
     }
 
     public void generateMapObject(MapObject mapObject){
-        mapObject.setCrood(getEmptyPosition());
-        map[mapObject.getCrood().getX()][mapObject.getCrood().getY()] = mapObject;
+        setMapObjectAt(getEmptyPosition(), mapObject);
     }
 
     // 查詢方法
